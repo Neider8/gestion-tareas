@@ -29,13 +29,21 @@ export default function TaskForm({ addTask, editingTask, updateTask }) {
     <form onSubmit={handleSubmit} className="mb-6 bg-white p-4 rounded-lg shadow">
       <input
         type="text"
-        placeholder="Título de la tarea"
+        pattern="[A-Za-z0-9 ]{5,50}"
+        required
+        title="El titulo debe tener entre 5 y 50 caracteres y no puede contener caracteres especiales."
+        autoFocus
+        placeholder="Titulo de la tarea"
         className="w-full p-2 mb-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         value={task.title}
         onChange={(e) => setTask({ ...task, title: e.target.value })}
       />
       <textarea
-        placeholder="Descripción (opcional)"
+        pattern="[A-Za-z0-9 ]{5,50}"
+        required
+        title="El titulo debe tener entre 5 y 50 caracteres y no puede contener caracteres especiales."
+        autoFocus
+        placeholder="Descripcion de la tarea (opcional)"
         className="w-full p-2 mb-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         value={task.description}
         onChange={(e) => setTask({ ...task, description: e.target.value })}
